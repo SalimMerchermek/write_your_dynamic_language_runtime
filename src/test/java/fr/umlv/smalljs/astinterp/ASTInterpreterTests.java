@@ -24,29 +24,32 @@ public class ASTInterpreterTests {
     return outStream.toString(StandardCharsets.UTF_8).replace("\r\n", "\n");
   }
 
-  /*
+
   @Tag("Q2") @Test
   public void helloString() {
     assertEquals("", execute("\"hello\"\n"));
   }
 
+
   @Tag("Q3") @Test
   public void integer3() {
     assertEquals("", execute("3\n"));
   }
-  
+
+
   @Tag("Q4") @Test
   public void print() {
     assertEquals("hello\n", execute("print(\"hello\")\n"));
     assertEquals("foobar\n", execute("print('foobar')\n"));
     assertEquals("3\n", execute("print(3)\n"));
   }
-  
+
+
   @Tag("Q5") @Test
   public void printPrint() {
     assertFalse(execute("print(print)\n").isEmpty());
   }
-  
+
   @Tag("Q6") @Test
   public void printOperations() {
     assertEquals("5\n", execute("print(3 + 2)\n"));
@@ -59,7 +62,8 @@ public class ASTInterpreterTests {
   public void printPrint3() {
     assertEquals("3\nundefined\n", execute("print(print(3))\n"));
   }
-  
+
+
   @Tag("Q8") @Test
   public void printAVariable() {
     assertEquals("3\n", execute("""
@@ -67,6 +71,7 @@ public class ASTInterpreterTests {
             print(a);
             """));
   }
+
   @Tag("Q8") @Test
   public void printSeveralVariables() {
     assertEquals("7\n", execute("""
@@ -91,12 +96,12 @@ public class ASTInterpreterTests {
             print('hello', me);
             """));
   }
-  
+
   @Tag("Q9") @Test
   public void printAVariableDefinedAfter() {
     assertEquals("undefined\n", execute("print(a);\nvar a = 2;\n"));
   }
-  
+
   @Tag("Q10") @Test
   public void callAUserDefinedFunctionAndPrint() {
     assertEquals("3\n", execute("""
@@ -106,6 +111,7 @@ public class ASTInterpreterTests {
             print(foo(2));
             """));
   }
+
   @Tag("Q10") @Test
   public void callAUserDefinedFunctionWithTheWrongNumberOfArguments() {
   	assertThrows(Failure.class, () -> execute("""
@@ -151,7 +157,7 @@ public class ASTInterpreterTests {
             print(undef());
             """));
   }
-  
+
   @Tag("Q11") @Test
   public void printWithAnIf() {
     assertEquals("false\n", execute("""
@@ -227,7 +233,7 @@ public class ASTInterpreterTests {
             print(f(7));
             """));
   }
-  
+
   @Tag("Q12") @Test
   public void callFibo() {
     assertEquals("21\n", execute("""
@@ -277,7 +283,7 @@ public class ASTInterpreterTests {
             print(f());
             """));
   }
-  
+
   @Tag("Q13") @Test
   public void createAnObject() {
     assertEquals("""
@@ -295,7 +301,7 @@ public class ASTInterpreterTests {
                 print(o);
                 """));
   }
-  
+
   @Tag("Q14") @Test
   public void createAnObjectFromAVariableValue() {
     assertEquals("""
@@ -325,7 +331,7 @@ public class ASTInterpreterTests {
                 };"""));
   }
   
-  
+
   @Tag("Q15") @Test
   public void objectGetAFieldValue() {
     assertEquals(
@@ -382,5 +388,5 @@ public class ASTInterpreterTests {
                 object.foo(42);
                 object.foo(42);
                 """));
-  }*/
+  }
 }
