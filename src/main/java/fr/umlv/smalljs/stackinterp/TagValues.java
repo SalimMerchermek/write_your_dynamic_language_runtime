@@ -50,8 +50,7 @@ public interface TagValues {
     return TagValues.decodeDictObject(tagValue, dict);
   }
   static int encodeAnyValue(Object object, Dictionary dict) {
-  	int smallInt;
-    if (object instanceof Integer && (smallInt = (Integer)object) >= 0) {
+    if (object instanceof Integer smallInt && smallInt >= 0) {
       return TagValues.encodeSmallInt(smallInt);
     }
     return TagValues.encodeDictObject(object, dict);
